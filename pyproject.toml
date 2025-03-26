@@ -1,0 +1,33 @@
+[project]
+name = "bot"
+version = "0.1.0"
+description = "Add your description here"
+dependencies = [
+    "aiogram>=3.19.0",
+    "fastapi[standard]>=0.115.12",
+    "pydantic>=2.10.6",
+    "pydantic-settings>=2.8.1",
+    "ngrok>=1.4.0",
+    "aiogram-dialog>=2.3.1",
+    "alembic>=1.15.1",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ruff>=0.11.2",
+    "black>=25.1.0",
+    "mypy>=1.15.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bot"]
